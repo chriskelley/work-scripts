@@ -1,0 +1,3 @@
+function init(){	var numFrames = prompt("How many frames should we add?","");		if(numFrames != null){		addCompLength(numFrames);	}}function addCompLength(numFrames){	 app.beginUndoGroup("addCompLength");      var projCollection = app.project.selection;   // all items      for(a=0; a<projCollection.length; a++){      if(projCollection[a].layers){		 if (projCollection[a] instanceof CompItem) {
+				currentDuration = projCollection[a].duration;
+				timeToAdd = parseInt(numFrames) / projCollection[a].frameRate;				projCollection[a].duration = currentDuration + timeToAdd;		   }      }   }      app.endUndoGroup();}init();		

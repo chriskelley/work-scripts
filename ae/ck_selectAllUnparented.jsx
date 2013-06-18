@@ -1,0 +1,1 @@
+﻿function SelectAllUnparented(){	app.beginUndoGroup("Select All Un-Parented");  	var activeComp = app.project.activeItem;  	var layerColl  = activeComp.layers; // all layers   		for(a=1; a<=layerColl.length; a++){		var thisLayer = layerColl[a];		if(thisLayer.parent == null){			thisLayer.selected = true;		}	}   		app.endUndoGroup();}SelectAllUnparented();		
